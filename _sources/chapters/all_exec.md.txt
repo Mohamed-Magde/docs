@@ -1,0 +1,242 @@
+# List of 112 Executors in Jina
+
+This version of Jina includes 112 Executors.
+
+## Inheritances in a Tree View
+- `BaseExecutor`
+   - `BaseEncoder`
+      - `BaseFrameworkExecutor`
+         - `BasePaddleExecutor`
+            - `BasePaddlehubEncoder`
+               - `BaseCVPaddlehubEncoder`
+                  - `ImagePaddlehubEncoder`
+                  - `VideoPaddlehubEncoder`
+               - `BaseTextPaddlehubEncoder`
+                  - `TextPaddlehubEncoder`
+         - `BaseTorchExecutor`
+            - `BaseTorchEncoder`
+               - `BaseCVTorchEncoder`
+                  - `ImageTorchEncoder`
+                     - `CustomImageTorchEncoder`
+               - `BaseTextTorchEncoder`
+                  - `FlairTextEncoder`
+                  - `BaseTransformerEncoder`
+                     - `TransformerTorchEncoder`
+                  - `FarmTextEncoder`
+         - `BaseTFExecutor`
+            - `BaseTFEncoder`
+               - `BaseCVTFEncoder`
+                  - `BiTImageEncoder`
+                  - `KerasImageEncoder`
+                     - `CustomKerasImageEncoder`
+               - `BaseTextTFEncoder`
+                  - `BaseTransformerEncoder`
+                     - `TransformerTFEncoder`
+                  - `UniversalSentenceEncoder`
+         - `BaseOnnxExecutor`
+            - `BaseOnnxEncoder`
+               - `OnnxImageEncoder`
+      - `BaseTextEncoder`
+         - `OneHotTextEncoder`
+      - `BaseNumericEncoder`
+         - `BaseAudioEncoder`
+            - `ChromaPitchEncoder`
+            - `MFCCTimbreEncoder`
+            - `BaseFrameworkExecutor`
+               - `BaseTorchExecutor`
+                  - `BaseTorchEncoder`
+                     - `Wav2VecSpeechEncoder`
+         - `IncrementalPCAEncoder`
+         - `FastICAEncoder`
+         - `BaseVideoEncoder`
+            - `BaseFrameworkExecutor`
+               - `BaseTorchExecutor`
+                  - `BaseTorchEncoder`
+                     - `BaseCVTorchEncoder`
+                        - `VideoTorchEncoder`
+         - `BaseImageEncoder`
+      - `BaseTransformerEncoder`
+      - `BaseClientExecutor`
+         - `BaseTFServingClientExecutor`
+            - `BaseTFServingClientEncoder`
+               - `UnaryTFServingClientEncoder`
+   - `BaseIndexer`
+      - `BaseVectorIndexer`
+         - `BaseNumpyIndexer`
+            - `NaiveIndexer`
+               - `NumpyIndexer`
+            - `NGTIndexer`
+            - `AnnoyIndexer`
+            - `SptagIndexer`
+            - `NmslibIndexer`
+         - `MilvusIndexer`
+      - `BaseKVIndexer`
+         - `BasePbIndexer`
+            - `BinaryPbIndexer`
+               - `DataURIPbIndexer`
+            - `JsonPbIndexer`
+            - `LeveldbIndexer`
+               - `ChunkLeveldbIndexer`
+               - `DocLeveldbIndexer`
+   - `CompoundExecutor`
+      - `CompoundIndexer`
+      - `PipelineEncoder`
+   - `BaseCrafter`
+      - `BaseSegmenter`
+         - `AudioSegmenter`
+            - `AudioSlicer`
+            - `SlidingWindowAudioSlicer`
+         - `DeepSegmenter`
+         - `JiebaSegmenter`
+         - `Sentencizer`
+         - `SlidingWindowSegmenter`
+      - `AudioReader`
+      - `AudioNormalizer`
+      - `ImageChunkCrafter`
+         - `CenterImageCropper`
+         - `FiveImageCropper`
+         - `ImageCropper`
+         - `RandomImageCropper`
+         - `SlidingWindowImageCropper`
+         - `ImageResizer`
+         - `ImageNormalizer`
+      - `ImageReader`
+      - `AudioMonophoner`
+      - `ArrayBytesReader`
+      - `ArrayStringReader`
+   - `BaseRanker`
+      - `Chunk2DocRanker`
+         - `BiMatchRanker`
+         - `MaxRanker`
+         - `MinRanker`
+         - `TfIdfRanker`
+            - `BM25Ranker`
+   - `BaseClientExecutor`
+      - `BaseTFServingClientExecutor`
+   - `BaseFrameworkExecutor`
+      - `BaseFaissExecutor`
+         - `BaseIndexer`
+            - `BaseVectorIndexer`
+               - `BaseNumpyIndexer`
+                  - `FaissIndexer`
+      - `BaseOnnxExecutor`
+      - `BasePaddleExecutor`
+      - `BaseTFExecutor`
+      - `BaseTorchExecutor`
+
+## Modules in a Table View 
+
+| Class | Module |
+| --- | --- |
+| `AnnoyIndexer` | `jina.executors.indexers.vector.nmslib` |
+| `ArrayBytesReader` | `jina.executors.crafters.image` |
+| `ArrayStringReader` | `jina.executors.crafters.image` |
+| `AudioMonophoner` | `jina.executors.crafters.image` |
+| `AudioNormalizer` | `jina.executors.crafters.image` |
+| `AudioReader` | `jina.executors.crafters.image` |
+| `AudioSegmenter` | `jina.executors.crafters.nlp.split` |
+| `AudioSlicer` | `jina.executors.crafters.audio.split` |
+| `BM25Ranker` | `jina.executors.rankers.tfidf` |
+| `BaseAudioEncoder` | `jina.executors.encoders` |
+| `BaseCVPaddlehubEncoder` | `jina.executors.encoders.frameworks` |
+| `BaseCVTFEncoder` | `jina.executors.encoders.frameworks` |
+| `BaseCVTorchEncoder` |   |
+| `BaseCVTorchEncoder` | `jina.executors.encoders.audio.fairseq` |
+| `BaseClientExecutor` | `jina.executors.encoders` |
+| `BaseCrafter` | `jina.executors.encoders` |
+| `BaseEncoder` | `jina.executors.encoders` |
+| `BaseExecutor` |   |
+| `BaseFaissExecutor` | `jina.executors.frameworks` |
+| `BaseFrameworkExecutor` | `jina.executors.encoders` |
+| `BaseImageEncoder` | `jina.executors.encoders` |
+| `BaseIndexer` | `jina.executors.encoders` |
+| `BaseIndexer` | `jina.executors.frameworks` |
+| `BaseKVIndexer` | `jina.executors.indexers` |
+| `BaseNumericEncoder` | `jina.executors.encoders` |
+| `BaseNumpyIndexer` |   |
+| `BaseNumpyIndexer` | `jina.executors.indexers.vector` |
+| `BaseOnnxEncoder` |   |
+| `BaseOnnxExecutor` |   |
+| `BaseOnnxExecutor` | `jina.executors.frameworks` |
+| `BasePaddleExecutor` |   |
+| `BasePaddleExecutor` | `jina.executors.frameworks` |
+| `BasePaddlehubEncoder` |   |
+| `BasePbIndexer` | `jina.executors.indexers.keyvalue.proto` |
+| `BaseRanker` | `jina.executors.encoders` |
+| `BaseSegmenter` | `jina.executors.crafters.image` |
+| `BaseTFEncoder` |   |
+| `BaseTFExecutor` |   |
+| `BaseTFExecutor` | `jina.executors.frameworks` |
+| `BaseTFServingClientEncoder` |   |
+| `BaseTFServingClientExecutor` |   |
+| `BaseTFServingClientExecutor` | `jina.executors.clients` |
+| `BaseTextEncoder` | `jina.executors.encoders` |
+| `BaseTextPaddlehubEncoder` | `jina.executors.encoders.frameworks` |
+| `BaseTextTFEncoder` | `jina.executors.encoders.frameworks` |
+| `BaseTextTorchEncoder` | `jina.executors.encoders.audio.fairseq` |
+| `BaseTorchEncoder` |   |
+| `BaseTorchExecutor` |   |
+| `BaseTorchExecutor` | `jina.executors.frameworks` |
+| `BaseTransformerEncoder` | `jina.executors.encoders.nlp.farm` |
+| `BaseTransformerEncoder` | `jina.executors.encoders.nlp.use` |
+| `BaseTransformerEncoder` | `jina.executors.encoders` |
+| `BaseVectorIndexer` |   |
+| `BaseVectorIndexer` | `jina.executors.indexers` |
+| `BaseVideoEncoder` | `jina.executors.encoders` |
+| `BiMatchRanker` | `jina.executors.rankers.tfidf` |
+| `BiTImageEncoder` | `jina.executors.encoders.image.tfkeras` |
+| `BinaryPbIndexer` | `jina.executors.indexers.keyvalue.leveldb` |
+| `CenterImageCropper` | `jina.executors.crafters.image` |
+| `ChromaPitchEncoder` | `jina.executors.encoders` |
+| `Chunk2DocRanker` | `jina.executors.rankers` |
+| `ChunkLeveldbIndexer` | `jina.executors.indexers.keyvalue.leveldb` |
+| `CompoundExecutor` | `jina.executors.encoders` |
+| `CompoundIndexer` | `jina.executors.encoders` |
+| `CustomImageTorchEncoder` | `jina.executors.encoders.image.customtorchvision` |
+| `CustomKerasImageEncoder` | `jina.executors.encoders.image.tfkeras` |
+| `DataURIPbIndexer` | `jina.executors.indexers.keyvalue.proto` |
+| `DeepSegmenter` | `jina.executors.crafters.nlp.split` |
+| `DocLeveldbIndexer` | `jina.executors.indexers.keyvalue.leveldb` |
+| `FaissIndexer` |   |
+| `FarmTextEncoder` | `jina.executors.encoders.nlp.farm` |
+| `FastICAEncoder` | `jina.executors.encoders` |
+| `FiveImageCropper` | `jina.executors.crafters.image` |
+| `FlairTextEncoder` | `jina.executors.encoders.nlp.farm` |
+| `ImageChunkCrafter` | `jina.executors.crafters.image` |
+| `ImageCropper` | `jina.executors.crafters.image` |
+| `ImageNormalizer` | `jina.executors.crafters.image` |
+| `ImagePaddlehubEncoder` | `jina.executors.encoders.frameworks` |
+| `ImageReader` | `jina.executors.crafters.image` |
+| `ImageResizer` | `jina.executors.crafters.image` |
+| `ImageTorchEncoder` | `jina.executors.encoders.video.torchvision` |
+| `IncrementalPCAEncoder` | `jina.executors.encoders` |
+| `JiebaSegmenter` | `jina.executors.crafters.nlp.split` |
+| `JsonPbIndexer` | `jina.executors.indexers.keyvalue.leveldb` |
+| `KerasImageEncoder` | `jina.executors.encoders.image.tfkeras` |
+| `LeveldbIndexer` | `jina.executors.indexers.keyvalue.leveldb` |
+| `MFCCTimbreEncoder` | `jina.executors.encoders` |
+| `MaxRanker` | `jina.executors.rankers.tfidf` |
+| `MilvusIndexer` | `jina.executors.indexers.vector` |
+| `MinRanker` | `jina.executors.rankers.tfidf` |
+| `NGTIndexer` | `jina.executors.indexers.vector.nmslib` |
+| `NaiveIndexer` | `jina.executors.indexers.vector.nmslib` |
+| `NmslibIndexer` | `jina.executors.indexers.vector.nmslib` |
+| `NumpyIndexer` | `jina.executors.indexers.vector.numpy` |
+| `OneHotTextEncoder` | `jina.executors.encoders` |
+| `OnnxImageEncoder` | `jina.executors.encoders.image.onnx` |
+| `PipelineEncoder` | `jina.executors.encoders` |
+| `RandomImageCropper` | `jina.executors.crafters.image` |
+| `Sentencizer` | `jina.executors.crafters.nlp.split` |
+| `SlidingWindowAudioSlicer` | `jina.executors.crafters.audio.split` |
+| `SlidingWindowImageCropper` | `jina.executors.crafters.image` |
+| `SlidingWindowSegmenter` | `jina.executors.crafters.nlp.split` |
+| `SptagIndexer` | `jina.executors.indexers.vector.nmslib` |
+| `TextPaddlehubEncoder` | `jina.executors.encoders.nlp.paddlehub` |
+| `TfIdfRanker` | `jina.executors.rankers.tfidf` |
+| `TransformerTFEncoder` |   |
+| `TransformerTorchEncoder` |   |
+| `UnaryTFServingClientEncoder` | `jina.executors.encoders.clients` |
+| `UniversalSentenceEncoder` | `jina.executors.encoders.nlp.use` |
+| `VideoPaddlehubEncoder` | `jina.executors.encoders.frameworks` |
+| `VideoTorchEncoder` |   |
+| `Wav2VecSpeechEncoder` |   |

@@ -1,0 +1,103 @@
+# List of 46 Drivers in Jina
+
+This version of Jina includes 46 Drivers.
+
+## Inheritances in a Tree View
+- `BaseDriver`
+   - `BaseQueryLangDriver`
+      - `CythonFilterDriver`
+      - `GraphQLDriver`
+      - `QuerySetDriver`
+   - `BaseRecursiveDriver`
+      - `QueryLangDriver`
+      - `BaseExecutableDriver`
+         - `BaseSearchDriver`
+            - `KVSearchDriver`
+            - `VectorSearchDriver`
+         - `BaseIndexDriver`
+            - `KVIndexDriver`
+            - `VectorIndexDriver`
+         - `CraftDriver`
+            - `SegmentDriver`
+         - `BaseEncodeDriver`
+            - `EncodeDriver`
+               - `UnaryEncodeDriver`
+         - `BaseRankDriver`
+            - `Chunk2DocRankDriver`
+      - `ReduceDriver`
+         - `ReduceAllDriver`
+      - `ExcludeQL`
+         - `ExcludeReqQL`
+            - `SelectReqQL`
+         - `SelectQL`
+      - `SliceQL`
+      - `SortQL`
+      - `ReverseQL`
+      - `FilterQL`
+      - `BaseConvertDriver`
+         - `URI2Buffer`
+            - `URI2DataURI`
+               - `Buffer2URI`
+                  - `Text2URI`
+                     - `All2URI`
+               - `Text2URI`
+            - `URI2Text`
+         - `Blob2PngURI`
+         - `Buffer2NdArray`
+         - `MIMEDriver`
+   - `ControlReqDriver`
+      - `RouteDriver`
+   - `ForwardDriver`
+   - `LogInfoDriver`
+   - `WaitDriver`
+
+## Modules in a Table View 
+
+| Class | Module |
+| --- | --- |
+| `All2URI` |   |
+| `BaseConvertDriver` | `jina.drivers.convert` |
+| `BaseDriver` |   |
+| `BaseEncodeDriver` | `jina.drivers.rank` |
+| `BaseExecutableDriver` | `jina.drivers.convert` |
+| `BaseIndexDriver` | `jina.drivers.rank` |
+| `BaseQueryLangDriver` | `jina.drivers.control` |
+| `BaseRankDriver` | `jina.drivers.rank` |
+| `BaseRecursiveDriver` | `jina.drivers.control` |
+| `BaseSearchDriver` | `jina.drivers.rank` |
+| `Blob2PngURI` | `jina.drivers.convert` |
+| `Buffer2NdArray` | `jina.drivers.convert` |
+| `Buffer2URI` | `jina.drivers.convert` |
+| `Chunk2DocRankDriver` | `jina.drivers.rank` |
+| `ControlReqDriver` | `jina.drivers.control` |
+| `CraftDriver` | `jina.drivers.rank` |
+| `CythonFilterDriver` | `jina.drivers.querylang.queryset` |
+| `EncodeDriver` | `jina.drivers.encode` |
+| `ExcludeQL` | `jina.drivers.convert` |
+| `ExcludeReqQL` | `jina.drivers.querylang.select` |
+| `FilterQL` | `jina.drivers.convert` |
+| `ForwardDriver` | `jina.drivers.control` |
+| `GraphQLDriver` | `jina.drivers.querylang.queryset` |
+| `KVIndexDriver` | `jina.drivers.index` |
+| `KVSearchDriver` | `jina.drivers.search` |
+| `LogInfoDriver` | `jina.drivers.control` |
+| `MIMEDriver` | `jina.drivers.convert` |
+| `QueryLangDriver` | `jina.drivers.convert` |
+| `QuerySetDriver` | `jina.drivers.querylang.queryset` |
+| `ReduceAllDriver` | `jina.drivers.reduce` |
+| `ReduceDriver` | `jina.drivers.convert` |
+| `ReverseQL` | `jina.drivers.convert` |
+| `RouteDriver` | `jina.drivers.control` |
+| `SegmentDriver` | `jina.drivers.craft` |
+| `SelectQL` | `jina.drivers.querylang.select` |
+| `SelectReqQL` | `jina.drivers.querylang.select` |
+| `SliceQL` | `jina.drivers.convert` |
+| `SortQL` | `jina.drivers.convert` |
+| `Text2URI` | `jina.drivers.convert` |
+| `URI2Buffer` | `jina.drivers.convert` |
+| `URI2DataURI` | `jina.drivers.convert` |
+| `URI2Text` | `jina.drivers.convert` |
+| `UnaryEncodeDriver` | `jina.drivers.encode` |
+| `VectorIndexDriver` | `jina.drivers.index` |
+| `VectorSearchDriver` | `jina.drivers.search` |
+| `WaitDriver` | `jina.drivers.control` |
